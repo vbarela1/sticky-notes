@@ -4,6 +4,7 @@ import { Router } from 'react-router/es6';
 import routes from './routes';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
+import 'babel-polyfill';
 
 ReactDOM.render(
   <Provider store={store}>

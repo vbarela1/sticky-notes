@@ -31,14 +31,11 @@ class Api::NotesController < ApiController
   end
 
   private
+    def set_note
+      @note = Note.find(params[:id])
+    end
 
-  def set_note
-    @note = Note.find(params[:id])
-  end
-
-  def note_params
-    params.require(:note).permit(:title, :body, tags: [])
-  end
-
-
+    def note_params
+      params.require(:note).permit(:title, :body, tags: [])
+    end
 end

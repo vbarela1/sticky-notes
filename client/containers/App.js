@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router/es6'
+import Flash from '../components/Flash';
 
 class App extends React.Component {
   componentDidMount() {
@@ -37,6 +38,7 @@ class App extends React.Component {
             </ul>
           </div>
         </nav>
+        <Flash />
         { this.props.children }
       </div>
     )

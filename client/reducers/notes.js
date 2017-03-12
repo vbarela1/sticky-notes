@@ -10,11 +10,12 @@ const notes = ( state = [], action ) => {
           return action.note;
         return note;
       })
-      case 'DELETE_NOTE':
-        return state.filter( n => n.id !== action.id);
-      default:
-        return state;
+    case 'DELETE_NOTE':
+      return state.filter( n => n.id !== action.id );
+    default:
+      return state;
   }
+
 }
 
 export default notes;

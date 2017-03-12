@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var StatsPlugin = require('stats-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+require('babel-polyfill');
 
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;
@@ -16,7 +17,7 @@ var production = process.env.NODE_ENV === 'production';
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    'application': './client/application.js'
+    'application': ['babel-polyfill', './client/application.js']
   },
 
   output: {
